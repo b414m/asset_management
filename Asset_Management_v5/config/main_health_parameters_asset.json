@@ -1,0 +1,177 @@
+{
+  "granularity_report_type": "ID del activo",
+  "input_assets_conn_params": "connection_params_one_pager.json",
+  "output_report_params": "connection_params_non_prod.json",
+  "valid_subsystems_flag": true,
+  "valid_store_formats": [
+    "Bodega Aurrera",
+    "Bodega Aurrera Express",
+    "Mi Bodega Aurrera",
+    "Walmart Express",
+    "Sam's Club",
+    "Walmart Supercenter"
+  ],
+  "column_cost_generated": "Cost",
+  "column_down_time_generated": "MTTR",
+  "status_to_valid_values": [
+    "Cerrado"
+  ],
+  "fields_input_assets_requirements": {
+    "task_id": "Id de tarea",
+    "request_class": "Request class",
+    "store_number": "# de Tienda",
+    "store_name": "Nombre de ubicacion",
+    "state": "Estado/provincia",
+    "banner": "Formato de negocio",
+    "task_type": "Tipo de tarea",
+    "asset_id": "ID del activo",
+    "asset_name": "Nombre de Activo",
+    "to_status": "Estado de tarea de trabajo",
+    "start_date_execution_to": "Fecha final de aprobación",
+    "end_date_execution_to": "Fecha de cierre de la OT",
+    "responsable_organization_sap_id": "ID de SAP de Organizacion Responsable",
+    "partial_cost": "Sub Total",
+    "total_savings": "Ahorros Totales"
+  },
+  "indicators": [
+    {
+      "sum_Costo Total de Proveedor": {
+        "inverse_proportional": true,
+        "mapping_strategy": "Sigmoide",
+        "weight": 0.1
+      },
+      "TMEF_Termino Real": {
+        "inverse_proportional": false,
+        "mapping_strategy": "Sigmoide",
+        "weight": 0.35
+      },
+       "sum_Tot Current Working Hours": {
+      "inverse_proportional": true,
+      "mapping_strategy": "Sigmoide",
+      "weight": 0.05
+    },
+    "Fails_Frequency_Index": {
+      "inverse_proportional": true,
+      "mapping_strategy": "Sigmoide",
+      "weight": 0.1
+    },
+    "years_since_grand_opening_x": {
+      "inverse_proportional": true,
+      "mapping_strategy": "Sigmoide",
+      "weight": 0.2
+    },
+    "years_since_last_touch_x": {
+      "inverse_proportional": true,
+      "mapping_strategy": "MinMax",
+      "weight": 0.2
+    }
+  }
+],
+"systems": [
+  {
+    "Refrigeracion": {
+      "service_weight": 0.3
+    },
+    "Aire": {
+      "service_weight": 0.1
+    },
+    "Electricidad": {
+      "service_weight": 0.1
+    },
+    "Electromecanico": {
+      "service_weight": 0.1
+    },
+    "Carrusel": {
+      "service_weight": 0.016
+    },
+    "Centro Automotriz": {
+      "service_weight": 0.016
+    },
+    "Cocina": {
+      "service_weight": 0.016
+    },
+    "Cortinas y Acceso": {
+      "service_weight": 0.016
+    },
+    "Cumplimiento": {
+      "service_weight": 0.016
+    },
+    "Drenajes y Alcantarillas": {
+      "service_weight": 0.016
+    },
+    "Equipo De Control y Monitoreo": {
+      "service_weight": 0.016
+    },
+    "Equipo de Limpieza": {
+      "service_weight": 0.016
+    },
+    "Equipo de Oficina": {
+      "service_weight": 0.016
+    },
+    "Equipo Traslado y Carga": {
+      "service_weight": 0.016
+    },
+    "Exteriores": {
+      "service_weight": 0.016
+    },
+    "Obra Civil": {
+      "service_weight": 0.016
+    },
+    "Plantas de Tratamiento": {
+      "service_weight": 0.016
+    },
+    "Plomería": {
+      "service_weight": 0.016
+    },
+    "Producción": {
+      "service_weight": 0.016
+    },
+    "PV Obra Civil": {
+      "service_weight": 0.016
+    },
+    "PV Seguridad": {
+      "service_weight": 0.016
+    },
+    "PV Servicios Generales": {
+      "service_weight": 0.016
+    },
+    "Recoleccion Residuos": {
+      "service_weight": 0.016
+    },
+    "Reparaciones Generales": {
+      "service_weight": 0.016
+    },
+    "Seguridad": {
+      "service_weight": 0.016
+    },
+    "Servicios Generales": {
+      "service_weight": 0.016
+    },
+    "Sistema Contra Incendios": {
+      "service_weight": 0.016
+    },
+     "Sistema Hidroneumatico": {
+      "service_weight": 0.016
+    },
+    "Sorter": {
+      "service_weight": 0.016
+    }
+  }
+],
+"task_orders": [
+  {
+    "Corrective": {
+      "task_type_weight": 0.8
+    },
+    "Preventive": {
+      "task_type_weight": 0.2
+    }
+  }
+],
+"health_granularities": [
+  "Asset",
+  "Store",
+  "State"
+]
+}
+    

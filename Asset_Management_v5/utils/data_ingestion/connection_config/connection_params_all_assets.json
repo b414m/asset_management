@@ -1,0 +1,8 @@
+{
+  "server": "mx-dasc-analytics2-nonprod-614cecfa.database.windows.net",
+  "db": "MX_DO_LAT",
+  "user": "svcmxlat@svc.wmtcloud.com",
+  "driver": "ODBC Driver 17 for SQL Server",
+  "target_table": "DD_MX_CALLOCATION_ALL_ASSETS_11_06_2025",
+  "keyring_ref": "tririga-nonprod"
+}
